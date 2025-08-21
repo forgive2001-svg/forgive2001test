@@ -4,28 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Forgive 2001</title>
-  <!-- Gothic Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+  <!-- Import Y2K Font -->
+  <style>
+    @font-face {
+      font-family: 'Y2KFont';
+      src: url('y2k-font.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
   <style>
     body {
       margin: 0;
       padding: 0;
       background-color: #ffffff; /* White page background */
       color: #000000;
-      font-family: 'UnifrakturCook', cursive;
+      font-family: 'Y2KFont', cursive;
       text-align: center;
       overflow-x: hidden;
     }
 
-    /* Logo */
-    img.logo {
-      width: 200px;
-      height: auto;
-      margin-top: 50px;
-      animation: spin 120s linear infinite; /* Very slow spin */
-    }
-
-    /* Gothic Title with Red Glow */
+    /* Y2K Title with Red Glow */
     h1 {
       margin-top: 20px;
       font-size: 3rem;
@@ -50,74 +49,10 @@
                      0 0 100px #ff9999;
       }
     }
-
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    /* Product Grid */
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
-      padding: 50px;
-      margin-top: 80px;
-    }
-
-    .product {
-      background: rgba(0, 0, 0, 0.03);
-      border-radius: 12px;
-      padding: 20px;
-      transition: transform 0.3s ease;
-    }
-
-    .product:hover {
-      transform: scale(1.05);
-    }
-
-    .product img {
-      width: 100%;
-      height: auto;
-      background: transparent;
-    }
-
-    .product h2 {
-      font-size: 1.2rem;
-      margin: 10px 0 5px;
-      color: #000000; /* black item name */
-    }
-
-    .product p {
-      font-size: 1rem;
-      color: #333333;
-    }
   </style>
 </head>
 <body>
-  <!-- Spinning Logo -->
-  <img src="flogo2.png" alt="Forgive 2001 Logo" class="logo">
-
-  <!-- Gothic Glowing Title -->
+  <!-- Y2K Glowing Title -->
   <h1>Forgive 2001</h1>
-
-  <!-- Clothing Products -->
-  <section class="products">
-    <div class="product">
-      <img src="shirt1.png" alt="Shirt 1">
-      <h2>Blood Red Tee</h2>
-      <p>$39.99</p>
-    </div>
-    <div class="product">
-      <img src="hoodie1.png" alt="Hoodie 1">
-      <h2>Shadow Hoodie</h2>
-      <p>$59.99</p>
-    </div>
-    <div class="product">
-      <img src="pants1.png" alt="Pants 1">
-      <h2>Dark Cargo Pants</h2>
-      <p>$79.99</p>
-    </div>
-  </section>
 </body>
 </html>
