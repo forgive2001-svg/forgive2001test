@@ -4,50 +4,120 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Forgive 2001</title>
+  <!-- Google Fonts for Gothic style -->
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
-      background-color: #ffffff;
-      color: #b00000; /* deep red */
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      flex-direction: column;
+      background-color: #000000;
+      color: #fff;
+      font-family: 'UnifrakturCook', cursive;
       text-align: center;
+      overflow-x: hidden;
     }
 
-    img {
+    /* Logo */
+    img.logo {
       width: 200px;
       height: auto;
-      animation: fadeIn 2s ease-in-out;
+      margin-top: 50px;
+      animation: spin 20s linear infinite;
     }
 
+    /* Gothic Title with Red Glow */
     h1 {
       margin-top: 20px;
-      font-size: 2.5rem;
-      letter-spacing: 3px;
-      animation: slideUp 2s ease-in-out;
+      font-size: 3rem;
+      color: #ff0000;
+      text-shadow: 0 0 10px #ff0000,
+                   0 0 20px #ff0000,
+                   0 0 40px #ff3333,
+                   0 0 80px #ff6666;
+      animation: glow 2s ease-in-out infinite alternate;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 5px #ff0000,
+                     0 0 10px #ff0000,
+                     0 0 20px #ff3333;
+      }
+      to {
+        text-shadow: 0 0 20px #ff0000,
+                     0 0 40px #ff3333,
+                     0 0 80px #ff6666,
+                     0 0 100px #ff9999;
+      }
     }
 
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Product Grid */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      padding: 50px;
+      margin-top: 80px;
+    }
+
+    .product {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .product:hover {
+      transform: scale(1.05);
+    }
+
+    .product img {
+      width: 100%;
+      height: auto;
+      background: transparent;
+    }
+
+    .product h2 {
+      font-size: 1.2rem;
+      margin: 10px 0 5px;
+      color: #ff3333;
+    }
+
+    .product p {
+      font-size: 1rem;
+      color: #ccc;
     }
   </style>
 </head>
 <body>
-  <!-- Logo -->
-  <img src="flogo.jpg" alt="Forgive 2001 Logo">
+  <!-- Spinning Logo -->
+  <img src="flogo.jpg" alt="Forgive 2001 Logo" class="logo">
 
-  <!-- Title -->
+  <!-- Gothic Glowing Title -->
   <h1>Forgive 2001</h1>
+
+  <!-- Clothing Products -->
+  <section class="products">
+    <div class="product">
+      <img src="shirt1.png" alt="Shirt 1">
+      <h2>Blood Red Tee</h2>
+      <p>$39.99</p>
+    </div>
+    <div class="product">
+      <img src="hoodie1.png" alt="Hoodie 1">
+      <h2>Shadow Hoodie</h2>
+      <p>$59.99</p>
+    </div>
+    <div class="product">
+      <img src="pants1.png" alt="Pants 1">
+      <h2>Dark Cargo Pants</h2>
+      <p>$79.99</p>
+    </div>
+  </section>
 </body>
 </html>
