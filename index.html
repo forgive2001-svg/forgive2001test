@@ -4,35 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Forgive 2001</title>
-  <!-- Import Y2K Font -->
-  <style>
-    @font-face {
-      font-family: 'Y2KFont';
-      src: url('y2k-font.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-    }
-  </style>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background-color: #ffffff; /* White page background */
-      color: #000000;
-      font-family: 'Y2KFont', cursive;
+      background-color: #ffffff; /* White background */
       text-align: center;
-      overflow-x: hidden;
+      font-family: monospace; /* base fallback font */
     }
 
-    /* Y2K Title with Red Glow */
+    /* Logo */
+    img.logo {
+      width: 200px;
+      margin-top: 50px;
+      animation: spin 120s linear infinite;
+    }
+
+    /* Simulated Y2K Pixel Font Title */
     h1 {
       margin-top: 20px;
-      font-size: 3rem;
+      font-size: 4rem;
+      letter-spacing: 0.1em;
       color: #ff0000;
-      text-shadow: 0 0 10px #ff0000,
-                   0 0 20px #ff0000,
-                   0 0 40px #ff3333,
-                   0 0 80px #ff6666;
+      font-family: monospace; /* fallback pixel style */
+      font-weight: bold;
+      text-transform: uppercase;
+      text-shadow: 
+        0 0 5px #ff0000,
+        0 0 10px #ff0000,
+        0 0 20px #ff3333,
+        0 0 40px #ff6666;
       animation: glow 2s ease-in-out infinite alternate;
     }
 
@@ -49,10 +50,74 @@
                      0 0 100px #ff9999;
       }
     }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Product Grid */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      padding: 50px;
+      margin-top: 80px;
+    }
+
+    .product {
+      background: rgba(0,0,0,0.03);
+      border-radius: 12px;
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .product:hover {
+      transform: scale(1.05);
+    }
+
+    .product img {
+      width: 100%;
+      height: auto;
+      background: transparent;
+    }
+
+    .product h2 {
+      font-size: 1.2rem;
+      margin: 10px 0 5px;
+      color: #000000;
+    }
+
+    .product p {
+      font-size: 1rem;
+      color: #333333;
+    }
   </style>
 </head>
 <body>
-  <!-- Y2K Glowing Title -->
-  <h1>Forgive 2001</h1>
+  <!-- Spinning Logo -->
+  <img src="flogo2.png" alt="Forgive 2001 Logo" class="logo">
+
+  <!-- Simulated Y2K Pixel Font Title -->
+  <h1>FORGIVE 2001</h1>
+
+  <!-- Products -->
+  <section class="products">
+    <div class="product">
+      <img src="shirt1.png" alt="Shirt 1">
+      <h2>Blood Red Tee</h2>
+      <p>$39.99</p>
+    </div>
+    <div class="product">
+      <img src="hoodie1.png" alt="Hoodie 1">
+      <h2>Shadow Hoodie</h2>
+      <p>$59.99</p>
+    </div>
+    <div class="product">
+      <img src="pants1.png" alt="Pants 1">
+      <h2>Dark Cargo Pants</h2>
+      <p>$79.99</p>
+    </div>
+  </section>
 </body>
 </html>
