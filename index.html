@@ -10,7 +10,7 @@
       padding: 0;
       background-color: #ffffff; /* White page background */
       color: #000000;
-      font-family: monospace; /* fallback font for other text */
+      font-family: monospace;
       text-align: center;
       overflow-x: hidden;
     }
@@ -38,7 +38,7 @@
     }
 
     .product {
-      background: rgba(0, 0, 0, 0.03);
+      background: rgba(0,0,0,0.03);
       border-radius: 12px;
       padding: 20px;
       transition: transform 0.3s ease;
@@ -65,31 +65,46 @@
       color: #333333;
     }
 
-    /* SVG Title Container */
-    .title-container {
+    /* Forgive 2001 Image Title */
+    .title-image {
       margin-top: 20px;
     }
 
-    svg text {
-      font-family: 'monospace'; /* fallback, pixel style */
-      font-size: 80px;
-      fill: #000000;
-      letter-spacing: 5px;
+    .title-image img {
+      max-width: 80%;
+      height: auto;
     }
+
   </style>
 </head>
 <body>
   <!-- Spinning Logo -->
   <img src="flogo2.png" alt="Forgive 2001 Logo" class="logo">
 
-  <!-- Pixel-Perfect SVG Title (Dreamer TM Y2K Pixel Style) -->
-  <div class="title-container">
-    <svg width="800" height="120" viewBox="0 0 800 120" xmlns="http://www.w3.org/2000/svg">
-      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">
-        FORGIVE 2001
-      </text>
-      <!-- Add small pixel sparkles -->
-      <circle cx="60" cy="30" r="2" fill="#000"/>
-      <circle cx="740" cy="50" r="2" fill="#000"/>
-      <circle cx="400" cy="90" r="2" fill="#000"/>
-      <circle cx="200" cy="
+  <!-- Forgive 2001 Font Image -->
+  <div class="title-image">
+    <a href="https://www.fontspace.com/category/old-english">
+      <img src="https://see.fontimg.com/api/rf5/gx1jp/YWZlYzM5YWQ3NjRkNDQzYjg5M2QwZDMxNDFmZGJkN2Mub3Rm/Rk9SR0lWRSAyMDAx/old-english-gothic-pixel-regular.png?r=fs&h=130&w=2000&fg=000000&bg=FFFFFF&tb=1&s=65" alt="Forgive 2001 Font">
+    </a>
+  </div>
+
+  <!-- Clothing Products -->
+  <section class="products">
+    <div class="product">
+      <img src="shirt1.png" alt="Shirt 1">
+      <h2>Blood Red Tee</h2>
+      <p>$39.99</p>
+    </div>
+    <div class="product">
+      <img src="hoodie1.png" alt="Hoodie 1">
+      <h2>Shadow Hoodie</h2>
+      <p>$59.99</p>
+    </div>
+    <div class="product">
+      <img src="pants1.png" alt="Pants 1">
+      <h2>Dark Cargo Pants</h2>
+      <p>$79.99</p>
+    </div>
+  </section>
+</body>
+</html>
