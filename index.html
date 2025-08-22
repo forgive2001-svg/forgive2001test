@@ -8,94 +8,57 @@
     body {
       margin: 0;
       padding: 0;
-      background-color: #ffffff; /* White background */
-      color: #000000;
-      font-family: monospace;
+      background: #000; /* fallback */
       text-align: center;
       overflow-x: hidden;
     }
 
-    /* Title Image */
-    .title-image {
-      margin-top: 50px;
-      opacity: 0;
-      animation: fadeIn 2s ease-in-out forwards;
-    }
-
-    .title-image img {
-      max-width: 80%;
+    /* Logo Image (replacing text) */
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 300px; /* adjust as needed */
       height: auto;
+      z-index: 10;
+      filter: drop-shadow(0 0 10px #ff0000)
+              drop-shadow(0 0 20px #ff3333)
+              drop-shadow(0 0 40px #ff6666);
     }
 
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
-
-    /* Product Grid */
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
-      padding: 50px;
-      margin-top: 50px;
-    }
-
-    .product {
-      background: rgba(0,0,0,0.03);
-      border-radius: 12px;
-      padding: 20px;
-      transition: transform 0.3s ease;
-    }
-
-    .product:hover {
-      transform: scale(1.05);
-    }
-
-    .product img {
+    /* Fullscreen video */
+    video {
+      display: block;
       width: 100%;
-      height: auto;
-      background: transparent;
+      height: 100vh;
+      object-fit: cover;
     }
 
-    .product h2 {
-      font-size: 1.2rem;
-      margin: 10px 0 5px;
-      color: #000000; /* Black item name */
-    }
-
-    .product p {
-      font-size: 1rem;
-      color: #333333; /* Dark gray price */
+    /* Fullscreen stacked images */
+    .full-image {
+      display: block;
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
     }
   </style>
 </head>
 <body>
+  <!-- Logo Image -->
+  <img src="pix.png" alt="Forgive 2001" class="logo">
 
-  <!-- Forgive 2001 Font Image with Fade-In -->
-  <div class="title-image">
-    <a href="https://www.fontspace.com/category/old-english">
-      <img src="https://see.fontimg.com/api/rf5/gx1jp/YWZlYzM5YWQ3NjRkNDQzYjg5M2QwZDMxNDFmZGJkN2Mub3Rm/Rk9SR0lWRSAyMDAx/old-english-gothic-pixel-regular.png?r=fs&h=130&w=2000&fg=000000&bg=FFFFFF&tb=1&s=65" alt="Forgive 2001 Font">
-    </a>
-  </div>
+  <!-- Video -->
+  <video autoplay muted loop playsinline>
+    <source src="forgiveps3.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
-  <!-- Clothing Products -->
-  <section class="products">
-    <div class="product">
-      <img src="shirt1.png" alt="Shirt 1">
-      <h2>Blood Red Tee</h2>
-      <p>$39.99</p>
-    </div>
-    <div class="product">
-      <img src="hoodie1.png" alt="Hoodie 1">
-      <h2>Shadow Hoodie</h2>
-      <p>$59.99</p>
-    </div>
-    <div class="product">
-      <img src="pants1.png" alt="Pants 1">
-      <h2>Dark Cargo Pants</h2>
-      <p>$79.99</p>
-    </div>
-  </section>
-
+  <!-- Images stacked below -->
+  <img src="x.jpeg" alt="x" class="full-image">
+  <img src="t.jpeg" alt="t" class="full-image">
+  <img src="p.jpeg" alt="p" class="full-image">
+  <img src="new.JPG" alt="new" class="full-image">
+  <img src="new2.JPG" alt="new2" class="full-image">
 </body>
 </html>
