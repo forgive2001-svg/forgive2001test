@@ -8,24 +8,27 @@
     body {
       margin: 0;
       padding: 0;
-      background-color: #ffffff; /* White page background */
+      background-color: #ffffff; /* White background */
       color: #000000;
       font-family: monospace;
       text-align: center;
       overflow-x: hidden;
     }
 
-    /* Logo */
-    img.logo {
-      width: 200px;
-      height: auto;
+    /* Title Image */
+    .title-image {
       margin-top: 50px;
-      animation: spin 120s linear infinite; /* Very slow spin */
+      opacity: 0;
+      animation: fadeIn 2s ease-in-out forwards;
     }
 
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+    .title-image img {
+      max-width: 80%;
+      height: auto;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
     }
 
     /* Product Grid */
@@ -34,7 +37,7 @@
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 30px;
       padding: 50px;
-      margin-top: 80px;
+      margin-top: 50px;
     }
 
     .product {
@@ -57,31 +60,18 @@
     .product h2 {
       font-size: 1.2rem;
       margin: 10px 0 5px;
-      color: #000000; /* black item name */
+      color: #000000; /* Black item name */
     }
 
     .product p {
       font-size: 1rem;
-      color: #333333;
+      color: #333333; /* Dark gray price */
     }
-
-    /* Forgive 2001 Image Title */
-    .title-image {
-      margin-top: 20px;
-    }
-
-    .title-image img {
-      max-width: 80%;
-      height: auto;
-    }
-
   </style>
 </head>
 <body>
-  <!-- Spinning Logo -->
-  <img src="flogo2.png" alt="Forgive 2001 Logo" class="logo">
 
-  <!-- Forgive 2001 Font Image -->
+  <!-- Forgive 2001 Font Image with Fade-In -->
   <div class="title-image">
     <a href="https://www.fontspace.com/category/old-english">
       <img src="https://see.fontimg.com/api/rf5/gx1jp/YWZlYzM5YWQ3NjRkNDQzYjg5M2QwZDMxNDFmZGJkN2Mub3Rm/Rk9SR0lWRSAyMDAx/old-english-gothic-pixel-regular.png?r=fs&h=130&w=2000&fg=000000&bg=FFFFFF&tb=1&s=65" alt="Forgive 2001 Font">
@@ -106,5 +96,6 @@
       <p>$79.99</p>
     </div>
   </section>
+
 </body>
 </html>
