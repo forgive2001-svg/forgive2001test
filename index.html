@@ -13,26 +13,30 @@
       overflow-x: hidden;
     }
 
-    /* Spinning inverted logo */
+    /* Spinning inverted logo (fixed overlay) */
     .spinning-logo {
+      position: fixed;
+      top: 20px;              /* distance from top */
+      left: 50%;
+      transform: translateX(-50%);
       width: 150px;
       height: auto;
-      margin: 40px auto 10px; /* space above and between logos */
-      display: block;
       filter: invert(1);
       animation: spin 60s linear infinite; /* very slow spin */
+      z-index: 9999;          /* always on top */
+      pointer-events: none;   /* doesn’t block scrolling/clicks */
     }
 
     @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+      from { transform: translateX(-50%) rotate(0deg); }
+      to { transform: translateX(-50%) rotate(360deg); }
     }
 
     /* Forgive 2001 Logo */
     .logo {
       width: 300px;
       height: auto;
-      margin: 0 auto 20px;
+      margin: 200px auto 20px; /* pushed down so it doesn’t overlap fixed logo */
       display: block;
       position: relative;
       z-index: 10;
@@ -57,7 +61,7 @@
   </style>
 </head>
 <body>
-  <!-- Inverted Spinning Logo (centered) -->
+  <!-- Inverted Spinning Logo (fixed, follows scroll) -->
   <img src="flogo2.png" alt="Spinning Forgive Logo" class="spinning-logo">
 
   <!-- Forgive 2001 Title -->
