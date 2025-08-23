@@ -8,57 +8,56 @@
     body {
       margin: 0;
       padding: 0;
-      background: #000; /* fallback */
+      background-color: #000;
       text-align: center;
       overflow-x: hidden;
     }
 
-    /* Logo Image (replacing text) */
+    /* Forgive 2001 Logo */
     .logo {
-      position: absolute;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 300px; /* adjust as needed */
+      width: 300px;
       height: auto;
+      margin: 20px auto;
+      display: block;
+      position: relative;
       z-index: 10;
-      filter: drop-shadow(0 0 10px #ff0000)
-              drop-shadow(0 0 20px #ff3333)
-              drop-shadow(0 0 40px #ff6666);
     }
 
     /* Fullscreen video */
-    video {
-      display: block;
+    .hero-video {
       width: 100%;
-      height: 100vh;
-      object-fit: cover;
+      height: 100vh; /* full screen height */
+      object-fit: cover; /* keep same look as before (cropped, cinematic) */
+      display: block;
     }
 
-    /* Fullscreen stacked images */
-    .full-image {
-      display: block;
+    /* Images section */
+    .media img {
       width: 100%;
-      height: 100vh;
-      object-fit: cover;
+      height: auto; /* show entire image without cropping */
+      display: block;
+      margin: 0; /* remove gaps */
+      padding: 0;
     }
   </style>
 </head>
 <body>
-  <!-- Logo Image -->
-  <img src="pix.png" alt="Forgive 2001" class="logo">
+  <!-- Forgive 2001 Title -->
+  <img src="pix.png" alt="Forgive 2001 Logo" class="logo">
 
-  <!-- Video -->
-  <video autoplay muted loop playsinline>
+  <!-- Autoplay Video -->
+  <video class="hero-video" autoplay muted loop playsinline>
     <source src="forgiveps3.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
-  <!-- Images stacked below -->
-  <img src="x.jpeg" alt="x" class="full-image">
-  <img src="t.jpeg" alt="t" class="full-image">
-  <img src="p.jpeg" alt="p" class="full-image">
-  <img src="new.JPG" alt="new" class="full-image">
-  <img src="new2.JPG" alt="new2" class="full-image">
+  <!-- Images directly below video -->
+  <div class="media">
+    <img src="x.jpeg" alt="Image X">
+    <img src="t.jpeg" alt="Image T">
+    <img src="p.jpeg" alt="Image P">
+    <img src="new.JPG" alt="Image New">
+    <img src="new2.JPG" alt="Image New2">
+  </div>
 </body>
 </html>
